@@ -86,7 +86,7 @@ sudo ./install_suricata.sh
 2. view_logs.sh
 Propósito: Facilitar el monitoreo diario de la actividad detectada por Suricata.
 
-Logro: Ofrece un menú interactivo que evita tener que recordar las rutas de los logs y los complejos comandos de filtrado. Con solo pulsar un número, puedes ver alertas de seguridad, el estado del servicio o un resumen rápido, haciendo el análisis de seguridad mucho más ágil.
+* **Logro: Ofrece un menú interactivo que evita tener que recordar las rutas de los logs y los complejos comandos de filtrado. Con solo pulsar un número, puedes ver alertas de seguridad, el estado del servicio o un resumen rápido, haciendo el análisis de seguridad mucho más ágil.
 
 Ejecución:
 
@@ -97,7 +97,7 @@ Ejecución:
 3. uninstall_suricata.sh
 Propósito: Eliminar por completo Suricata y todos sus componentes del sistema.
 
-Logro: Garantiza una desinstalación limpia y segura. No solo elimina el programa, sino que también purga los archivos de configuración, los logs acumulados y el PPA del sistema, evitando conflictos si se desea reinstalar en el futuro.
+* **Logro: Garantiza una desinstalación limpia y segura. No solo elimina el programa, sino que también purga los archivos de configuración, los logs acumulados y el PPA del sistema, evitando conflictos si se desea reinstalar en el futuro.
 
 Ejecución:
 
