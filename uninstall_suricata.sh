@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# --- Script para Desinstalar y Erradicar Suricata ---
+# --- Script para Desinstalar y Erradicar Suricata (Versión Corregida) ---
 
 # 1. Validar que se ejecuta como root
 if [ "$(id -u)" -ne 0 ]; then
@@ -21,16 +21,19 @@ echo "Deteniendo y deshabilitando el servicio de Suricata..."
 systemctl stop suricata > /dev/null 2>&1
 systemctl disable suricata > /dev/null 2>&1
 
-# 3. Desinstalar los paquetes
+# 3. Desinstalar los paquetes (CORREGIDO)
 echo "Desinstalando Suricata (purge)..."
-apt-get purge -y suricata suricata-oinkmaster
+apt-get purge -y suricata
+apt-get purge -y suricata-oinkmaster > /dev/null 2>&1 || true # Oculta el error si no existe
+
+# 4. Limpiar dependencias no usadas
 apt-get autoremove -y
 
-# 4. Eliminar el repositorio PPA
+# 5. Eliminar el repositorio PPA
 echo "Eliminando el repositorio PPA de Suricata..."
-add-apt-repository --remove -y ppa:oisf/suricata-stable
+add-apt-repository --remove -y ppa:oisf/suricata-stable > /dev/null 2>&1
 
-# 5. PASOS ADICIONALES: Eliminar directorios residuales
+# 6. Eliminar directorios residuales
 echo "Eliminando directorios de configuración, logs y datos para una limpieza completa..."
 rm -rf /etc/suricata
 rm -rf /var/log/suricata
